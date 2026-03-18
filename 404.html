@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CartSync</title>
+    <script>
+      // GitHub Pages SPA redirect solution
+      // Store the current path and redirect to index.html
+      sessionStorage.setItem('redirectPath', window.location.pathname + window.location.search + window.location.hash);
+      window.location.replace(window.location.origin + '/CartSyncDemo/');
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
