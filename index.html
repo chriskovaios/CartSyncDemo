@@ -14,9 +14,12 @@
     <script>
       // Restore path after GitHub Pages redirect from 404.html
       (function() {
+        console.log('index.html: Checking for redirectPath...');
         var redirectPath = sessionStorage.getItem('redirectPath');
+        console.log('index.html: Found redirectPath:', redirectPath);
         if (redirectPath) {
           sessionStorage.removeItem('redirectPath');
+          console.log('index.html: Restoring path:', redirectPath);
           history.replaceState(null, null, redirectPath);
         }
       })();
