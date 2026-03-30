@@ -6,10 +6,6 @@ const urlsToCache = [
   '/manifest.json',
   '/logo192.png',
   '/logo512.png',
-  '/geojson/dogparkGR.geojson',
-  '/geojson/petgroomingGR.geojson',
-  '/geojson/petshopGR.geojson',
-  '/geojson/veterinaryGR.geojson',
   // Add more static assets like CSS, JS files as needed
 ];
 
