@@ -1,11 +1,11 @@
-const CACHE_NAME = 'my-pwa-cache-v1';
+const CACHE_NAME = 'cartsync-pwa-cache-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/favicon.ico',
-  '/manifest.json',
-  '/logo192.png',
-  '/logo512.png',
+  '/CartSyncDemo/',
+  '/CartSyncDemo/index.html',
+  '/CartSyncDemo/favicon.ico',
+  '/CartSyncDemo/manifest.json',
+  '/CartSyncDemo/logo192.png',
+  '/CartSyncDemo/logo512.png',
   // Add more static assets like CSS, JS files as needed
 ];
 
