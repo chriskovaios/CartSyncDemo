@@ -33,8 +33,11 @@
         console.log('index.html: Found redirectPath:', redirectPath);
         if (redirectPath) {
           sessionStorage.removeItem('redirectPath');
-          console.log('index.html: Restoring path:', redirectPath);
-          history.replaceState(null, null, redirectPath);
+          // Strip the base path if present since React Router will add it back
+          var cleanPath = redirectPath.replace('/CartSyncDemo', '');
+          if (!cleanPath) cleanPath = '/';
+          console.log('index.html: Restoring clean path:', cleanPath);
+          history.replaceState(null, null, '/CartSyncDemo' + cleanPath);
         }
       })();
     </script>
