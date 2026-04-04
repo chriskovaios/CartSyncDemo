@@ -1,4 +1,4 @@
-const CACHE_NAME ='cartsync-pwa-cache-v0.0.56';
+const CACHE_NAME ='cartsync-pwa-cache-v0.0.57';
 const urlsToCache = [
   '/CartSyncDemo/',
   '/CartSyncDemo/index.html',
