@@ -1,4 +1,4 @@
-const CACHE_NAME ='cartsync-pwa-cache-v0.0.57';
+const CACHE_NAME ='cartsync-pwa-cache-v0.0.58';
 const urlsToCache = [
   '/CartSyncDemo/',
   '/CartSyncDemo/index.html',
@@ -33,10 +33,16 @@ self.addEventListener('activate', (event) => {
         cacheNames.map((cacheName) => {
           if (cacheName !== CACHE_NAME) {
             console.log('[Service Worker] Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
           }
         })
       );
+    }).then(() => {
+      // Force all clients to reload
+      return self.clients.matchAll({ type: 'window' }).then((clients) => {
+        clients.forEach(client => {
+          client.navigate(client.url);
+        });
+      });
     })
   );
 });
