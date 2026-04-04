@@ -12,7 +12,7 @@ const urlsToCache = [
 // Install the service worker
 self.addEventListener('install', (event) => {
   console.log('[Service Worker] Installing Service Worker...');
-  
+  self.skipWaiting(); // Activate worker immediately
   // Cache files during installation
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -25,7 +25,7 @@ self.addEventListener('install', (event) => {
 // Activate the service worker
 self.addEventListener('activate', (event) => {
   console.log('[Service Worker] Activating Service Worker...');
-  
+  event.waitUntil(self.clients.claim()); // Take control of all clients immediately
   // Clean up old caches
   event.waitUntil(
     caches.keys().then((cacheNames) => {
